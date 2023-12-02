@@ -5,7 +5,8 @@ import './App.css'
 import Navbar from './Components/Navbar'
 import Hero from './Components/Hero'
 import About from './Components/About'
-import Work from './Components/work'
+import Work from "./Components/Work"
+
 
 function App() {
  
