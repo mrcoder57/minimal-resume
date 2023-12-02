@@ -2,7 +2,7 @@ import React from 'react'
 import github from "../assets/git.svg"
 const Navbar = () => {
   return (
-    <div className="navbar text-[#f19650] bg-slate-100 font-mono">
+    <div className="navbar text-[#d8874a] bg-slate-100 font-mono">
     <div className="navbar-start">
       <div className="dropdown">
         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden text-[#f19650]">

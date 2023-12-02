@@ -27,7 +27,7 @@ const About = () => {
               width={70}
               className="rounded-full"
             />
-            <h3 className="text-xl text-[#f19650] hidden lg:block">Who am I ?</h3>
+            <h3 className="text-xl text-[#d8874a] hidden lg:block">Who am I ?</h3>
           </button>
           <button
             className={`mx-12 card shadow-lg btn btn-ghost h-20 flex flex-row justify-around mt-12 ${
@@ -42,16 +42,16 @@ const About = () => {
               width={70}
               className="rounded-full"
             />
-            <h3 className="text-xl text-[#f19650] hidden lg:block">
+            <h3 className="text-xl text-[#d8874a] hidden lg:block">
               What can I do ?
             </h3>
           </button>
         </div>
         <div className="mt-5 ml-4">
-          <h2 className="text-4xl text-[#f19650] font-mono font-bold">
+          <h2 className="text-4xl text-[#d8874a] font-mono font-bold">
             {activeSection === "about" ? "About Me" : "Capabilities"}
           </h2>
-          <div className="mt-5 text-[#f19650] font-mono font-bold text-lg">
+          <div className="mt-5 text-[#d8874a] font-mono font-bold text-lg">
             {activeSection === "about" ? (
               <p className="about">
                 {/* About section content */}
