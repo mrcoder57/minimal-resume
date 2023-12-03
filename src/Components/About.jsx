@@ -11,7 +11,7 @@ const About = () => {
   };
 
   return (
-    <div className="w-full mt-28 border-2">
+    <div className="w-full mt-28 ">
       <div className="grid lg:grid-cols-2 grid-cols-1 mx-12">
         <div className="flex flex-col card mt-4">
           <button
@@ -51,7 +51,7 @@ const About = () => {
           <h2 className="text-4xl text-[#d8874a] font-mono font-bold">
             {activeSection === "about" ? "About Me" : "Capabilities"}
           </h2>
-          <div className="mt-5 text-[#d8874a] font-mono font-bold text-lg">
+          <div className="mt-5 text-slate-700 font-mono font-bold text-lg">
             {activeSection === "about" ? (
               <p className="about">
                 {/* About section content */}
