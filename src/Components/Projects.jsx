@@ -53,7 +53,7 @@ const Projects = () => {
                 {project.startDate.slice(0, 10)} - {project.endDate.slice(0, 10)}
               </p>
               <p>{project.skills.map((skills)=>(
-                <span>🧐{skills} </span>
+                <span>🧐{skills}</span>
               ))}</p>
             </div>
           </div>

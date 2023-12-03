@@ -11,7 +11,7 @@ const Hero = () => {
       </div>
       <br/>
       <div>
-        <p className='mr-6 mt-4 text-xl text-[#d8874a]'>
+        <p className='mr-6 mt-4 text-xl text-slate-600'>
           I create Wonderful things <br /> I create the best applications
         </p>
       </div>
