@@ -2,7 +2,7 @@ import React from 'react'
 import body from "../assets/man.png"
 const Hero = () => {
   return (
-    <div className='lg:h-[600px] h-full w-full overflow-y-hidden bg-slate-100 font-mono'>
+    <div className='lg:h-[600px] h-full w-full overflow-y-hidden bg-slate-100 font-mono shadow-lg'>
     <div className='flex lg:flex-row flex-col  mt-10 lg:justify-between justify-start mx-8'>
       <div>
         <h1 className='text-6xl font-medium text-[#d8874a]'>

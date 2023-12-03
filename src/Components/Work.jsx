@@ -26,7 +26,7 @@ const Work = () => {
   }, []);
 
   return (
-    <div className=" font-mono bg-slate-100 mt-28 ">
+    <div className=" font-mono bg-slate-100 mt-28 shadow-lg ">
       <h1 className=" my-3 text-center text-3xl font-bold text-[#d8874a]">My Experties</h1>
       <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical mx-8 text-slate-700">
         {data.map((exp, index) => (

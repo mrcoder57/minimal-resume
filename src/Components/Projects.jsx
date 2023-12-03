@@ -34,14 +34,14 @@ const Projects = () => {
     },
   };
   return (
-    <div className=" mx-8 mt-28 h-96 text-slate-700 font-mono">
+    <div className=" mx-8 mt-28 text-slate-700 font-mono">
       <div className=" flex lg:flex-row flex-col justify-between">
         <h1 className="text-[#d8874a]  text-4xl font-bold mb-3 ">My Latest Works</h1>
         <p className="   text-slate-700 text-xl mt-3">Made with Perfection</p>
       </div>
       <Carousel responsive={responsive}>
         {data.map((project) => (
-          <div className="card w-72 glass mt-6 mx-4 shadow-lg">
+          <div className="card w-80 glass mt-6 mx-4 shadow-lg mb-3">
             <figure>
               <img src={project.image} alt="Project" />
             </figure>

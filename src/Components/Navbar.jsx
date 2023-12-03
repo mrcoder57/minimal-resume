@@ -28,7 +28,7 @@ const Navbar = () => {
       </ul>
     </div>
     <div className="navbar-end">
-      <a href='https://github.com/mrcoder57'><img src={github} className=' h-8 w-8'/></a>
+      <a href='https://github.com/mrcoder57' target="_blank"><img src={github} className=' h-8 w-8'/></a>
     </div>
   </div>
   )
