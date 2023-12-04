@@ -5,6 +5,11 @@ import axios from "axios";
 
 const Projects = () => {
   const [data, setData] = useState([]);
+  const [showFullDescription, setShowFullDescription] = useState(false);
+
+  const toggleDescription = () => {
+    setShowFullDescription(!showFullDescription);
+  };
   const getApi = async () => {
     try {
       const response = await axios.get(
@@ -36,7 +41,9 @@ const Projects = () => {
   return (
     <div className=" mx-8 mt-28 text-slate-700 font-mono">
       <div className=" flex lg:flex-row flex-col justify-between">
-        <h1 className="text-[#d8874a]  text-4xl font-bold mb-3 ">My Latest Works</h1>
+        <h1 className="text-[#d8874a]  text-4xl font-bold mb-3 ">
+          My Latest Works
+        </h1>
         <p className="   text-slate-700 text-xl mt-3">Made with Perfection</p>
       </div>
       <Carousel responsive={responsive}>
@@ -45,16 +52,30 @@ const Projects = () => {
             <figure>
               <img src={project.image} alt="Project" />
             </figure>
-            <div className="card-body">
+            <div className="card-body ">
+              <div className=" flex flex-row justify-between gap-3">
                 <a href={project.url}>
-              <h2 className="card-title font-bold">{project.title} </h2></a>
-              <p>{project.description}</p>
+                  <h2 className="card-title font-bold">{project.title} </h2>
+                </a>
+                <p>{project.startDate.slice(5,10)} - {project.endDate.slice(5,10)}</p>
+              </div>
               <p>
-                {project.startDate.slice(0, 10)} - {project.endDate.slice(0, 10)}
+                {showFullDescription
+                  ? project.description
+                  : `${project.description.slice(0, 80)}...`}
+                <button
+                  className="btn btn-ghost underline"
+                  onClick={toggleDescription}
+                >
+                  {showFullDescription ? "Read Less" : "Read More"}
+                </button>
               </p>
-              <p>{project.skills.map((skills)=>(
-                <span>🧐{skills}</span>
-              ))}</p>
+
+              <p className="font-semibold">
+                {project.skills.map((skills) => (
+                  <span> {skills} </span>
+                ))}
+              </p>
             </div>
           </div>
         ))}
