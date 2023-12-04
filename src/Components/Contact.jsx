@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import send from "../assets/send.svg";
 import { motion } from "framer-motion";
 import gmail from "../assets/gmail.svg";
-import calendar from "../assets/calendar.svg";
+import meeting from "../assets/meeting.svg";
 import copy from "../assets/copyright.svg"
 import { SectionWrapper } from "../hoc";
 
@@ -57,7 +57,7 @@ const Contact = () => {
     <div className="bg-slate-100 mt-28 font-mono overflow-x-hidden">
       <div className="mx-8">
         <div className="hero  ">
-          <div className=" flex-col lg:flex-row justify-between grid lg:grid-cols-2 grid-cols-1 my-5 gap-44">
+          <div className=" flex-col lg:flex-row justify-between grid lg:grid-cols-2 grid-cols-1 my-5 lg:gap-44 gap-10">
             <motion.div
               className="hero-content flex-col lg:flex-row-reverse"
               animate={{
@@ -72,7 +72,7 @@ const Contact = () => {
               <div className="text-center lg:text-left">
                 <img
                   src={send}
-                  className="h-72 w-72"
+                  className="lg:h-64 lg:w-72 ml-16 lg:ml-0 "
                   alt="Send Image"
                   draggable={false}
                 />
@@ -143,7 +143,7 @@ const Contact = () => {
         <div className=" flex flex-row items-center justify-center text-xl">
           <a href="https://calendly.com/tiwariji2300" target="_blank">
             <button className="btn btn-ghost my-4 ">
-            <img src={calendar} className=" h-10 w-10 rounded-full p-2" />
+            <img src={meeting} className=" h-10 w-10 rounded-full " />
                <p className=" hidden lg:block">let's meet</p> 
                 </button>
           </a>
