@@ -17,7 +17,7 @@ const Hero = () => {
       </div>
     </div>
     <div className=' lg:h-44  lg:max-h-40 lg:ml-[350px] lg:mt-[-180px] mx-4 mt-6 '>
-    <img src={body} alt='boy' width={500} height={200} />
+    <img src={body} alt='boy' width={500} height={200} draggable={false} />
     </div>
   </div>
   )
