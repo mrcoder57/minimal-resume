@@ -41,7 +41,7 @@ const Projects = () => {
       </div>
       <Carousel responsive={responsive}>
         {data.map((project) => (
-          <div className="card w-80 glass mt-6 mx-4 shadow-lg mb-3">
+          <div className="card lg:w-80 w-64 glass mt-6 mx-4 shadow-lg mb-3">
             <figure>
               <img src={project.image} alt="Project" />
             </figure>

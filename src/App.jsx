@@ -8,19 +8,23 @@ import About from './Components/About'
 import Work from "./Components/Work"
 import Projects from './Components/Projects'
 import Contact from './Components/Contact'
+import { BrowserRouter } from 'react-router-dom'
 
 
 function App() {
  
 
   return (
+
     <div>
+      <BrowserRouter>
      <Navbar/>
      <Hero/>
      <About/>
      <Work/>
      <Projects/>
      <Contact/>
+     </BrowserRouter>
     </div>
   )
 }

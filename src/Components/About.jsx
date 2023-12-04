@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import comp from "../assets/into.jpeg"
 import cap from "../assets/cap.jpeg"
+import { SectionWrapper } from '../hoc';
 
 const About = () => {
   const [activeSection, setActiveSection] = useState("about");
@@ -86,4 +87,4 @@ const About = () => {
   )
 }
 
-export default About
+export default SectionWrapper(About,"about");

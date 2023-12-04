@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import gmail from "../assets/gmail.svg";
 import calendar from "../assets/calendar.svg";
 import copy from "../assets/copyright.svg"
+import { SectionWrapper } from "../hoc";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -162,4 +163,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default SectionWrapper(Contact,"contact");;

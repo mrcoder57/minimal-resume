@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { SectionWrapper } from "../hoc";
 
 const getRandomColor = () => {
   const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFA500", "#800080"]; // Add more colors if needed
@@ -60,4 +61,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default SectionWrapper(Work,"work");
