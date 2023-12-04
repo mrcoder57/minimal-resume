@@ -54,7 +54,7 @@ const Projects = () => {
             </figure>
             <div className="card-body ">
               <div className=" flex flex-row justify-between gap-3">
-                <a href={project.url}>
+                <a href={project.url} target="_blank">
                   <h2 className="card-title font-bold">{project.title} </h2>
                 </a>
                 <p>{project.startDate.slice(5,10)} - {project.endDate.slice(5,10)}</p>
