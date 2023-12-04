@@ -1,5 +1,6 @@
 import React from 'react'
 import github from "../assets/git.svg"
+import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
     <div className="navbar text-slate-700 bg-slate-100 font-mono">
@@ -16,7 +17,7 @@ const Navbar = () => {
           <li><a href='#contact'>Contact</a></li>
         </ul>
       </div>
-      <a className="btn btn-ghost text-xl text-slate-700">Aman</a>
+      <Link to='/' className="btn btn-ghost text-xl text-slate-700">Aman</Link>
     </div>
     <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal px-1">
