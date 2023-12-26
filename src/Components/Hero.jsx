@@ -1,5 +1,6 @@
 import React from 'react'
 import body from "../assets/man.png"
+import Herobg from './Herobg'
 const Hero = () => {
   return (
     <div className='lg:h-[600px] h-full w-full overflow-y-hidden bg-slate-100 font-mono shadow-lg'>
@@ -15,10 +16,13 @@ const Hero = () => {
           I create Wonderful things <br /> I create the best applications
         </p>
       </div>
+      
     </div>
     <div className=' lg:h-44  lg:max-h-40 lg:ml-[350px] lg:mt-[-180px] mx-4 mt-6 '>
     <img src={body} alt='boy' width={500} height={200} draggable={false} />
+    
     </div>
+    <Herobg></Herobg>
   </div>
   )
 }

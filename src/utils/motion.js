@@ -9,6 +9,27 @@ export const staggerContainer = (staggerChildren, delayChildren) => {
       },
     };
   };
+  export const marqueeVariants = {
+    animate: {
+      x: [-1035, 1080],
+      rotate: [0, 360],
+      transition: {
+        x: {
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: 10,
+          ease: "linear",
+        },
+        rotate: {
+          repeat: Infinity,
+          duration: 15,
+          ease: "linear",
+        },
+      },
+    },
+  };
+  
+  
   export const slideIn = (direction, type, delay, duration) => {
     return {
       hidden: {
