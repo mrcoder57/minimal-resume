@@ -5,7 +5,7 @@ import { skills } from "../constants";
 
 const Herobg = () => {
   return (
-    <div className="text-3xl lg:mt-32 flex lg:flex flex-col relative z-0 gap-5">
+    <div className="text-3xl lg:mt-32 flex lg:flex flex-col relative z-0 gap-5 overflow-x-hidden">
       <motion.div variants={marqueeVarReverse} animate="animate">
         <div className=" flex flex-row gap-12 ">
           {skills.map((skill, index) => (
@@ -21,7 +21,7 @@ const Herobg = () => {
           ))}
         </div>
       </motion.div>
-      <div className=" bg-[#d8874a] h-14 w-[full] shadow-md">
+      <div className=" bg-[#d8874a] h-14 w-full lg:w-full shadow-md overflow-x-hidden">
         <motion.div variants={marqueeVariants} animate="animate">
           <div className=" flex flex-row gap-12 ">
             {skills.map((skill, index) => (
