@@ -21,7 +21,7 @@ const Herobg = () => {
           ))}
         </div>
       </motion.div>
-      <div className=" bg-[#d8874a] h-14 w-[full]">
+      <div className=" bg-[#d8874a] h-14 w-[full] shadow-md">
         <motion.div variants={marqueeVariants} animate="animate">
           <div className=" flex flex-row gap-12 ">
             {skills.map((skill, index) => (
