@@ -12,17 +12,24 @@ export const staggerContainer = (staggerChildren, delayChildren) => {
   export const marqueeVariants = {
     animate: {
       x: [-1035, 1080],
-      rotate: [0, 360],
       transition: {
         x: {
           repeat: Infinity,
           repeatType: "loop",
-          duration: 10,
+          duration: 30,
           ease: "linear",
         },
-        rotate: {
+      },
+    },
+  };
+  export const marqueeVarReverse = {
+    animate: {
+      x: [1080, -1080],
+      transition: {
+        x: {
           repeat: Infinity,
-          duration: 15,
+          repeatType: "loop",
+          duration: 30,
           ease: "linear",
         },
       },

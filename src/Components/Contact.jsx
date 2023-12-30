@@ -4,7 +4,7 @@ import send from "../assets/send.svg";
 import { motion } from "framer-motion";
 import gmail from "../assets/gmail.svg";
 import meeting from "../assets/meeting.svg";
-import copy from "../assets/copyright.svg"
+import copy from "../assets/copyright.svg";
 import { SectionWrapper } from "../hoc";
 
 const Contact = () => {
@@ -143,9 +143,9 @@ const Contact = () => {
         <div className=" flex flex-row items-center justify-center text-xl">
           <a href="https://calendly.com/tiwariji2300" target="_blank">
             <button className="btn btn-ghost my-4 ">
-            <img src={meeting} className=" h-10 w-10 rounded-full " />
-               <p className=" hidden lg:block">let's meet</p> 
-                </button>
+              <img src={meeting} className=" h-10 w-10 rounded-full " />
+              <p className=" hidden lg:block">let's meet</p>
+            </button>
           </a>
           <a href="mailto:tiwariji2300@gmail.com" target="_blank">
             <button className="btn btn-ghost my-4 ml-4">
@@ -156,11 +156,11 @@ const Contact = () => {
           <span className=" flex flex-row">
             <img src={copy} className=" h-8 w-8 ml-5" alt=" c" />
             Aman Tiwari
-            </span>
+          </span>
         </div>
       </div>
     </div>
   );
 };
 
-export default SectionWrapper(Contact,"contact");;
+export default SectionWrapper(Contact, "contact");
