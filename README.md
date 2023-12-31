@@ -1,8 +1,31 @@
-# React + Vite
+# Aman Tiwari's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio! As a passionate full-stack web developer, I have created this portfolio using the PERN stack (PostgreSQL, Express.js, React, Node.js). This README will guide you through setting up the project locally and understanding its structure.
 
-Currently, two official plugins are available:
+## Table of Contents
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- PostgreSQL: Database management
+- Express.js: Web application framework for Node.js
+- React: JavaScript library for building user interfaces
+- Node.js: JavaScript runtime for server-side development
+
+## Getting Started
+
+### Prerequisites
+Make sure you have the following software installed on your machine:
+- Node.js: [Download](https://nodejs.org/)
+- PostgreSQL: [Download](https://www.postgresql.org/)
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/your-portfolio.git
+   cd your-portfolio
