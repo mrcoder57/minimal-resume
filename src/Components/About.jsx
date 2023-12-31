@@ -3,6 +3,8 @@ import { useState } from 'react';
 import comp from "../assets/into.jpeg"
 import cap from "../assets/cap.jpeg"
 import { SectionWrapper } from '../hoc';
+import { motion } from 'framer-motion';
+import { slideIn } from '../utils/motion';
 
 const About = () => {
   const [activeSection, setActiveSection] = useState("about");
@@ -12,6 +14,9 @@ const About = () => {
   };
 
   return (
+
+
+   
     <div className="w-full mt-28 ">
       <div className="grid lg:grid-cols-2 grid-cols-1 mx-12">
         <div className="flex flex-col card mt-4">
@@ -84,6 +89,7 @@ const About = () => {
         </div>
       </div>
     </div>
+  
   )
 }
 

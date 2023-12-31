@@ -7,7 +7,7 @@ const Herobg = () => {
   return (
     <div className="text-3xl lg:mt-32 flex lg:flex flex-col relative z-0 gap-5 overflow-x-hidden">
       <motion.div variants={marqueeVarReverse} animate="animate">
-        <div className=" flex flex-row gap-12 ">
+        <div className=" flex flex-row gap-14 ">
           {skills.map((skill, index) => (
             <div key={index} className=" flex flex-row">
               <img
@@ -16,7 +16,7 @@ const Herobg = () => {
                 className="h-10 w-10"
                 draggable={false}
               />
-              <p className="text-[#d8874a] font-semibold ">{skill.name}</p>
+              <p className="text-[#d8874a] font-bold first-letter:capitalize font-mono ">{skill.name}</p>
             </div>
           ))}
         </div>
@@ -32,7 +32,7 @@ const Herobg = () => {
                   className=" h-10 w-10"
                   draggable={false}
                 />
-                <p className=" text-[#d8874a] font-outline-4 font-mono ml-2 font-semibold text-3xl items-center mt-1">
+                <p className=" text-[#d8874a] font-outline-4 font-sans ml-2 font-semibold text-3xl items-center mt-1 first-letter:capitalize">
                   *{skill.name}
                 </p>
               </div>

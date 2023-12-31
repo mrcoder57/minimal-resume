@@ -4,8 +4,9 @@ import mysql from "../assets/skills/postgres.svg";
 import mongo from "../assets/skills/mongo.svg";
 import typescript from "../assets/skills/typescript.svg";
 import figma from "../assets/skills/figma.svg";
-import github from "../assets/github.svg";
-import git from "../assets/git.svg";
+import github from "../assets/skills/github_m.svg";
+import tailwind from "../assets/skills/tailwindcss.svg"
+
 export const skills = [
   { i: 1, name: "nodeJs", image: node },
   { i: 2, name: "React", image: react },
@@ -14,4 +15,5 @@ export const skills = [
   { i: 5, name: "Figma", image: figma },
   { i: 6, name: "Typescript", image: typescript },
   { i: 7, name: "Git", image: github },
+  {i:8,name:"TailwindCSS",image:tailwind}
 ];

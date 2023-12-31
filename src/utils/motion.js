@@ -35,9 +35,20 @@ export const staggerContainer = (staggerChildren, delayChildren) => {
       },
     },
   };
-  
-  
-  export const slideIn = (direction, type, delay, duration) => {
+  export const contactmotion = {
+    whileHover: {
+      y: [0, 30], // Rotate from 0 to 360 degrees
+      transition: {
+        repeat: Infinity,
+        repeatType: "loop",
+        duration: 0.3,
+        ease: "linear",
+      },
+    },
+  };
+  //"left", "tween", 0.5, 0.8
+
+  export const slideIn = (direction) => {
     return {
       hidden: {
         x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
@@ -47,9 +58,9 @@ export const staggerContainer = (staggerChildren, delayChildren) => {
         x: 0,
         y: 0,
         transition: {
-          type: type,
-          delay: delay,
-          duration: duration,
+          type: "tween",
+          delay: 0.5,
+          duration: 0.8,
           ease: "easeOut",
         },
       },

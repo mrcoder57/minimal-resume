@@ -6,6 +6,7 @@ import gmail from "../assets/gmail.svg";
 import meeting from "../assets/meeting.svg";
 import copy from "../assets/copyright.svg";
 import { SectionWrapper } from "../hoc";
+import { contactmotion } from "../utils/motion";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -60,14 +61,9 @@ const Contact = () => {
           <div className=" flex-col lg:flex-row justify-between grid lg:grid-cols-2 grid-cols-1 my-5 lg:gap-44 gap-10">
             <motion.div
               className="hero-content flex-col lg:flex-row-reverse"
-              animate={{
-                y: [-20, 20], // Back and forth animation
-              }}
-              transition={{
-                duration: 3.5,
-                ease: "linear", // Linear easing for continuous motion
-                loop: Infinity,
-              }}
+              animate="animate"
+             variants={contactmotion}
+             whileHover={contactmotion.whileHover}
             >
               <div className="text-center lg:text-left">
                 <img
@@ -123,7 +119,7 @@ const Contact = () => {
                     placeholder="Your Message"
                     value={formData.message}
                     onChange={handleChange}
-                    className="input input-bordered"
+                    className="input input-bordered h-40"
                     rows={3}
                     required
                   />
