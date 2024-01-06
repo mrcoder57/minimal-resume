@@ -16,7 +16,7 @@ const Work = () => {
   const getApi = async () => {
     try {
       const response = await axios.get(
-        "https://portfoliobackend-production-36e6.up.railway.app/experience"
+        "https://amanportfolio-4wag.onrender.com/experience"
       );
       setData(response.data);
       console.log(response.data);

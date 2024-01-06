@@ -13,7 +13,7 @@ const Projects = () => {
   const getApi = async () => {
     try {
       const response = await axios.get(
-        "https://portfoliobackend-production-36e6.up.railway.app/project"
+        "https://amanportfolio-4wag.onrender.com/project"
       );
       setData(response.data);
       console.log(response.data);
