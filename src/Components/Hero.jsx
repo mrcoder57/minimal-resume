@@ -29,7 +29,7 @@ const Hero = () => {
           My Resume
         </a>
       </div>
-      <div className=" lg:h-44  lg:max-h-40 lg:ml-[350px] lg:mt-[-180px] mx-4 mt-6 relative z-50 md:ml-[200px] ">
+      <div className=" lg:h-44  lg:max-h-40 lg:ml-[350px] lg:mt-[-250px] mx-4 mt-6 relative z-50 md:ml-[200px] ">
         <img src={body} alt="boy" width={500} height={200} draggable={false} />
       </div>
       <Herobg></Herobg>
