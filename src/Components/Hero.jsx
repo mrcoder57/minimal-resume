@@ -19,7 +19,7 @@ const Hero = () => {
           </p>
         </div>
       </div>
-      <div className=" lg:mt-20 ml-5 mt-5 lg:ml-10 btn btn-ghost border border-[#d8874a] rounded-full shadow-md">
+      <div className=" lg:mt-10 ml-5 mt-5 lg:ml-6 btn btn-ghost border border-[#d8874a] rounded-full shadow-md">
         <a
           href="https://drive.google.com/file/d/1ejyE2RP_Cz13TaZra1zSmjWfRlYw7raQ/view?usp=sharing"
           target="_blank"

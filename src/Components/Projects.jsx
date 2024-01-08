@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import axios from "axios";
+import Projectskeleton from "./Projectskeleton";
 
 const Projects = () => {
   const [data, setData] = useState([]);
   const [showFullDescription, setShowFullDescription] = useState(false);
+  const [laoding, setLoading] = useState(true);
 
   const toggleDescription = () => {
     setShowFullDescription(!showFullDescription);
@@ -16,7 +18,7 @@ const Projects = () => {
         "https://amanportfolio-4wag.onrender.com/project"
       );
       setData(response.data);
-      console.log(response.data);
+      setLoading(false);
     } catch (error) {
       console.error(error);
     }
@@ -38,6 +40,9 @@ const Projects = () => {
       items: 1,
     },
   };
+  {
+    if (laoding) return <Projectskeleton />;
+  }
   return (
     <div className=" mx-8 mt-28 text-slate-700 font-mono">
       <div className=" flex lg:flex-row flex-col justify-between">
@@ -57,7 +62,10 @@ const Projects = () => {
                 <a href={project.url} target="_blank">
                   <h2 className="card-title font-bold">{project.title} </h2>
                 </a>
-                <p>{project.startDate.slice(5,10)} - {project.endDate.slice(5,10)}</p>
+                <p>
+                  {project.startDate.slice(5, 10)} -{" "}
+                  {project.endDate.slice(5, 10)}
+                </p>
               </div>
               <p>
                 {showFullDescription
