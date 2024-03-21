@@ -89,7 +89,7 @@ function Register() {
         <div>
         <p className=" h-1">already have an account?</p>
         <br />
-        <Link to="/login">login</Link>
+        <Link to="/">login</Link>
       </div>
       </form>
     </div>
