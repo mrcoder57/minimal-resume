@@ -86,11 +86,12 @@ function Login() {
             Login
           </button>
         </div>
-      </form>
-      <div>
+        <div>
         <p className=" h-1">don't have account?</p>
         <Link to="/register">register</Link>
       </div>
+      </form>
+     
     </div>
   );
 }
