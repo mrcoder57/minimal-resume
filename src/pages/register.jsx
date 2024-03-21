@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import { Link } from 'react-router-dom';
 
 function Register() {
   const [email, setEmail] = useState('');
@@ -85,6 +86,10 @@ function Register() {
             Register
           </button>
         </div>
+        <div>
+        <p className=" h-1">already have an account?</p>
+        <Link to="/login">login</Link>
+      </div>
       </form>
     </div>
   );
