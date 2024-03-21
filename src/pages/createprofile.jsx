@@ -81,6 +81,7 @@ function UserProfileForm() {
       }
     }
   };
+ 
 
   const generateImageUrl = () => {
     if (imagePublicId) {
@@ -96,7 +97,7 @@ function UserProfileForm() {
 
     return "";
   };
-
+  console.log(generateImageUrl())
   return (
     <div className="container mx-auto">
       <h1 className="text-2xl font-bold mt-8 mb-4">Update Profile</h1>

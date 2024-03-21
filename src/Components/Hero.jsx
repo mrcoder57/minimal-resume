@@ -26,7 +26,7 @@ const Hero = () => {
     getProfile();
   }, []);
   return (
-    <div className="lg:h-[600px] h-full w-full overflow-y-hidden font-mono shadow-lg">
+    <div className="lg:h-[600px] h-full w-full overflow-y-hidden font-mono shadow-lg mb-20">
       <div className="flex lg:flex-row flex-col  mt-10 lg:justify-between justify-start mx-8">
         <div>
           <h1 className="text-6xl font-medium text-[#d8874a]">
@@ -37,15 +37,15 @@ const Hero = () => {
         <br />
         <div>
           <p className="mr-6 mt-4 text-xl text-slate-600">
-            I create Wonderful things <br /> I create the best applications
+            {user.bio}
           </p>
         </div>
       </div>
 
-      <div className="h-44 w-44 lg:h-80 lg:w-80 rounded-full flex items-center justify-center mx-auto">
+      <div className=" mt-14 mb-14 h-44 w-44 lg:h-80 lg:w-80 rounded-full flex items-center justify-center mx-auto ">
         <img
           className="rounded-full border-[5px] border-[#e09860]"
-          src={body}
+          src={user.profilePic}
           alt="boy"
           width={300}
           height={300}
