@@ -15,20 +15,20 @@ const getRandomColor = () => {
 const Work = () => {
   const [data, setData] = useState([]);
   const [loading,setLoading]=useState(true)
-  const getApi = async () => {
-    try {
-      const response = await axios.get(
-        "https://amanportfolio-4wag.onrender.com/experience"
-      );
-      setData(response.data);
-        setLoading(false)
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  useEffect(() => {
-    getApi();
-  }, []);
+  // const getApi = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       "https://amanportfolio-4wag.onrender.com/experience"
+  //     );
+  //     setData(response.data);
+  //       setLoading(false)
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+  // useEffect(() => {
+  //   getApi();
+  // }, []);
   {
     if (loading) return <Workskeleton/>;
   }

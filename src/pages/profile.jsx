@@ -9,7 +9,7 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom'
 const Profile = () => {
   return (
    <div>
-    {/* <Navbar/> */}
+    <Navbar/>
     <Hero/>
     <About/>
     <Work/>

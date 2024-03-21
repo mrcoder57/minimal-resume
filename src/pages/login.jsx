@@ -88,6 +88,7 @@ function Login() {
         </div>
         <div>
         <p className=" h-1">don't have account?</p>
+        <br />
         <Link to="/register">register</Link>
       </div>
       </form>

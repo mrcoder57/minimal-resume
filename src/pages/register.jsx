@@ -24,7 +24,7 @@ function Register() {
       Cookies.set('userId', id);
       
       console.log('Registration successful');
-      window.location.href = `/profile/${id}`
+      window.location.href = `/create`
     } catch (error) {
       console.error('Error:', error);
       setError(error.response.data.error || 'Registration failed');
@@ -88,6 +88,7 @@ function Register() {
         </div>
         <div>
         <p className=" h-1">already have an account?</p>
+        <br />
         <Link to="/login">login</Link>
       </div>
       </form>

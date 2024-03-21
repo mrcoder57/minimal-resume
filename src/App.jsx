@@ -8,6 +8,8 @@ import Register from './pages/register'
 import Profile from './pages/profile'
 import Login from './pages/login'
 import UserProfileForm from './pages/createprofile'
+import ExperienceUpload from './pages/experinceupload'
+import ProjectUpload from './pages/projectupload'
 
 
 function App() {
@@ -17,12 +19,14 @@ function App() {
 
     <div>
       <BrowserRouter>
-      <Navbar/>
+     
      <Routes>
       <Route path="/register" element={<Register />} />
       <Route path="/profile/:id" element={<Profile />} />
       <Route path="/" element={<Login />} />
       <Route path="/create" element={<UserProfileForm />} />
+      <Route path="/experience" element={<ExperienceUpload />} />
+      <Route path="/project" element={<ProjectUpload />} />
      </Routes>
      </BrowserRouter>
     </div>

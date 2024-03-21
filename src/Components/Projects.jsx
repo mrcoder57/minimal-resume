@@ -12,20 +12,20 @@ const Projects = () => {
   const toggleDescription = () => {
     setShowFullDescription(!showFullDescription);
   };
-  const getApi = async () => {
-    try {
-      const response = await axios.get(
-        "https://amanportfolio-4wag.onrender.com/project"
-      );
-      setData(response.data);
-      setLoading(false);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  useEffect(() => {
-    getApi();
-  }, []);
+  // // const getApi = async () => {
+  // //   try {
+  // //     // const response = await axios.get(
+  // //     //   "https://amanportfolio-4wag.onrender.com/project"
+  // //     // );
+  // //     setData(response.data);
+  // //     setLoading(false);
+  // //   } catch (error) {
+  // //     console.error(error);
+  // //   }
+  // };
+  // useEffect(() => {
+  //   getApi();
+  // }, []);
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
