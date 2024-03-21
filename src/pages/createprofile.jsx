@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Cookies from "js-cookie";
@@ -16,17 +16,12 @@ function UserProfileForm() {
   const [education, setEducation] = useState("");
   const [name, setName] = useState("");
   const [overview, setOverview] = useState("");
-  const skills=["node","express"];
+  const [skills, setSkills] = useState([]);
 
   const handleSubmit = async (e) => {
-    
     e.preventDefault();
-  
     try {
-    
       const Token = Cookies.get("token");
-  
-     
       if (!Token) {
         console.log("You need to login or sign up");
         return;
@@ -41,10 +36,11 @@ function UserProfileForm() {
           linkedin,
           twitter,
           profilePic: imageUrl,
-          // education,
-          // name,
-          // overview,
-          // skills, 
+          skills: skills.length > 0 ? skills : ["react", "node"], // Ensure skills is an array, if not provided, set default
+          education,
+          name,
+          overview,
+          userId,
         },
         {
           headers: {
@@ -55,14 +51,15 @@ function UserProfileForm() {
   
       console.log("Profile updated successfully:", response.data);
     } catch (error) {
-     
-      console.error("Error:", error);
+      console.error("Error:", error.message);
   
-      if (error.response && error.response.data && error.response.data.error) {
-      
-        setError(error.response.data.error);
+      if (
+        error.response &&
+        error.response.status === 400 &&
+        error.response.data.error === "Profile already exists for this user"
+      ) {
+        setError("Profile already exists for this user");
       } else {
-     
         setError("Failed to update profile");
       }
     }
@@ -71,15 +68,36 @@ function UserProfileForm() {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
 
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]:
-        name === "skills"
-          ? value.split(",").map((skill) => skill.trim())
-          : value,
-    }));
+    if (name === "skills") {
+      // If input is skills, split by comma and update skills state
+      setSkills(value.split(",").map((skill) => skill.trim()));
+    } else {
+      // For other inputs, update their respective states
+      switch (name) {
+        case "bio":
+          setBio(value);
+          break;
+        case "linkedin":
+          setLinkedin(value);
+          break;
+        case "twitter":
+          setTwitter(value);
+          break;
+        case "education":
+          setEducation(value);
+          break;
+        case "name":
+          setName(value);
+          break;
+        case "overview":
+          setOverview(value);
+          break;
+        default:
+          break;
+      }
+    }
   };
-  console.log(skills);
+
   const handleImageUpload = async (event) => {
     const files = event.target.files;
 
@@ -132,7 +150,7 @@ function UserProfileForm() {
 
     return "";
   };
-  console.log(generateImageUrl());
+
   return (
     <div className="container mx-auto">
       <h1 className="text-2xl font-bold mt-8 mb-4">Update Profile</h1>
@@ -153,7 +171,8 @@ function UserProfileForm() {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="Enter your bio"
             value={bio}
-            onChange={(e) => setBio(e.target.value)}
+            onChange={(e) => handleInputChange(e)}
+            name="bio"
             required
           />
         </div>
@@ -170,7 +189,8 @@ function UserProfileForm() {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="Enter your LinkedIn profile URL"
             value={linkedin}
-            onChange={(e) => setLinkedin(e.target.value)}
+            onChange={(e) => handleInputChange(e)}
+            name="linkedin"
           />
         </div>
         <div className="mb-4">
@@ -186,58 +206,77 @@ function UserProfileForm() {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="Enter your Twitter profile URL"
             value={twitter}
-            onChange={(e) => setTwitter(e.target.value)}
+            onChange={(e) => handleInputChange(e)}
+            name="twitter"
           />
         </div>
         <div className="mb-4">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="twitter"
+            htmlFor="education"
           >
             Education
           </label>
           <textarea
-            id="Education"
+            id="education"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="Enter overview of your education"
             value={education}
-            onChange={(e) => setEducation(e.target.value)}
+            onChange={(e) => handleInputChange(e)}
+            name="education"
           />
         </div>
-
         <div className="mb-4">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="twitter"
+            htmlFor="overview"
           >
-            overview
+            Overview
           </label>
           <textarea
             id="overview"
             type="text"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="describe yourself"
+            placeholder="Describe yourself"
             value={overview}
-            onChange={(e) => setOverview(e.target.value)}
+            onChange={(e) => handleInputChange(e)}
+            name="overview"
           />
         </div>
         <div className="mb-4">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="twitter"
+            htmlFor="name"
           >
             Name
           </label>
           <input
-            id="twitter"
+            id="name"
             type="text"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="Enter User Name"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => handleInputChange(e)}
+            name="name"
           />
         </div>
-       
+        <div className="mb-4">
+          <label
+            className="block text-gray-700 text-sm font-bold mb-2"
+            htmlFor="skills"
+          >
+            Skills
+          </label>
+          <input
+            id="skills"
+            type="text"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Enter your skills (comma-separated)"
+            value={skills.join(", ")}
+            onChange={(e) => handleInputChange(e)}
+            name="skills"
+          />
+        </div>
         <div className="mb-4">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"

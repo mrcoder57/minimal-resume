@@ -6,19 +6,19 @@ const Hero = () => {
  const { id } = useParams();
  const [error, setError] = useState(null);
  const [data, setData] = useState({});
- const [loading, setLoading] = useState(true); // Added loading state
+ const [loading, setLoading] = useState(true);
 
  const getProfile = async () => {
-    setLoading(true); // Set loading to true before fetching data
+    setLoading(true); 
     try {
       const response = await axios.get(`https://minimal-resume-backend-1.onrender.com/profile/${id}`);
       console.log(response.data);
       setData(response.data);
     } catch (error) {
       console.log(error);
-      setError(error.message); // Set error message
+      setError(error.message); 
     } finally {
-      setLoading(false); // Set loading to false after fetching data or if an error occurs
+      setLoading(false); 
     }
  };
 
@@ -26,11 +26,11 @@ const Hero = () => {
     getProfile();
  }, []);
 
- if (loading) return <div>Loading...</div>; // Conditional rendering for loading state
- if (error) return <div>Error: {error}</div>; // Conditional rendering for error state
+ if (loading) return <div>Loading...</div>; 
+ if (error) return <div>Error: {error}</div>; 
 
  return (
-    <div className="lg:h-[600px] h-full w-full overflow-y-hidden font-mono shadow-lg mb-20">
+    <div className="lg:h-[600px] h-full w-full overflow-y-hidden font-mono shadow-md mb-20">
       <div className="flex lg:flex-row flex-col mt-10 lg:justify-between justify-start mx-8">
         <div>
           {data.profiles && data.profiles.twitter && (
