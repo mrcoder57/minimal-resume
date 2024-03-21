@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+
   const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
@@ -79,13 +80,17 @@ function Login() {
         <div className="mb-6"></div>
         <div className="flex items-center justify-between">
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-[#e09860] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
             Login
           </button>
         </div>
       </form>
+      <div>
+        <p className=" h-1">don't have account?</p>
+        <Link to="/register">register</Link>
+      </div>
     </div>
   );
 }
