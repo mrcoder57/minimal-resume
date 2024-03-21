@@ -3,12 +3,11 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './Components/Navbar'
-import Hero from './Components/Hero'
-import About from './Components/About'
-import Work from "./Components/Work"
-import Projects from './Components/Projects'
-import Contact from './Components/Contact'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import Register from './pages/register'
+import Profile from './pages/profile'
+import Login from './pages/login'
+import UserProfileForm from './pages/createprofile'
 
 
 function App() {
@@ -18,12 +17,13 @@ function App() {
 
     <div>
       <BrowserRouter>
-     <Navbar/>
-     <Hero/>
-     <About/>
-     <Work/>
-     <Projects/>
-     <Contact/>
+      <Navbar/>
+     <Routes>
+      <Route path="/register" element={<Register />} />
+      <Route path="/profile/:id" element={<Profile />} />
+      <Route path="/" element={<Login />} />
+      <Route path="/create" element={<UserProfileForm />} />
+     </Routes>
      </BrowserRouter>
     </div>
   )
