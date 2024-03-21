@@ -38,9 +38,9 @@ const About = () => {
             }`}
             onClick={() => handleToggle("about")}
           >
-            Overview
+            
             <h3 className="text-xl text-[#d8874a] hidden lg:block">
-              Education
+            Overview
             </h3>
           </button>
           <button

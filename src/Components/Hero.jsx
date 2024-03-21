@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import cap from "../assets/cap.jpeg"
 
 const Hero = () => {
  const { id } = useParams();
@@ -42,24 +43,31 @@ const Hero = () => {
         <br />
         <div>
           {data.profiles && data.profiles.bio && (
-            <p className="mr-6 mt-4 text-xl text-slate-600">
+            <p className="mr-6 mt-4 text-xl text-slate-600 flex items-center justify-center mx-auto">
               {data.profiles.bio || "Bio not available"}
             </p>
           )}
         </div>
       </div>
-      {data.profiles && data.profiles.profilePic && (
-        <div className="mt-14 mb-14 h-44 w-44 lg:h-80 lg:w-80 rounded-full flex items-center justify-center mx-auto">
-          <img
-            className="rounded-full border-[5px] border-[#e09860]"
-            src={data.profiles.profilePic}
-            alt="boy"
-            width={300}
-            height={300}
-            draggable={false}
-          />
-        </div>
-      )}
+      {data.profiles && data.profiles.profilePic ? (
+  <img
+    className="rounded-full border-[5px] border-[#e09860] object-cover mx-auto"
+    src={data.profiles.profilePic}
+    alt="boy"
+    width={300}
+    height={300}
+    draggable={false}
+  />
+) : (
+  <img
+    className="rounded-full border-[5px] border-[#e09860] mx-auto"
+    src={cap} // Replace with the path to your default profile picture
+    alt="Default Profile Pic"
+    width={300}
+    height={300}
+    draggable={false}
+  />
+)}
     </div>
  );
 };
