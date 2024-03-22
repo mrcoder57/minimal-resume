@@ -38,10 +38,7 @@ const About = () => {
             }`}
             onClick={() => handleToggle("about")}
           >
-            
-            <h3 className="text-xl text-[#d8874a] hidden lg:block">
-            Overview
-            </h3>
+            <h3 className="text-2xl lg:block">Overview</h3>
           </button>
           <button
             className={`mx-12 card shadow-lg btn btn-ghost h-20 flex flex-row justify-around mt-12 ${
@@ -50,7 +47,7 @@ const About = () => {
             onClick={() => handleToggle("capabilities")}
           >
             <h2 className=" text-2xl font-mono font-bold">Education</h2>
-            <h3 className="text-xl text-[#d8874a] hidden lg:block"></h3>
+            
           </button>
         </div>
         <div className="mt-5 ml-4">
