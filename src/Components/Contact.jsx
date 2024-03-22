@@ -146,12 +146,12 @@ const Contact = () => {
           <a href="mailto:tiwariji2300@gmail.com" target="_blank">
             <button className="btn btn-ghost my-4 ml-4">
               <img src={gmail} className=" h-8 w-8 rounded-full" />
-              <p className=" hidden lg:block">tiwariji2300@gmail.com</p>
+              <p className=" hidden lg:block">Email me</p>
             </button>
           </a>
           <span className=" flex flex-row">
             <img src={copy} className=" h-8 w-8 ml-5" alt=" c" />
-            Aman Tiwari
+            Your name
           </span>
         </div>
       </div>
