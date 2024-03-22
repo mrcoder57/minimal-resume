@@ -29,7 +29,7 @@ const Work = () => {
       console.log("experince",response.data)
         setLoading(false)
     } catch (error) {
-      console.error(error);
+      console.error(error.message);
     }
   };
   useEffect(() => {
