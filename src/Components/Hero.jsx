@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import cap from "../assets/cap.jpeg"
-
+import Cookies from "js-cookie";
 const Hero = () => {
  const { id } = useParams();
  const [error, setError] = useState(null);
@@ -14,6 +14,7 @@ const Hero = () => {
     try {
       const response = await axios.get(`https://minimal-resume-backend-1.onrender.com/profile/${id}`);
       console.log(response.data);
+      Cookies.set('profileid',response.data.profiles.id)
       setData(response.data);
     } catch (error) {
       console.log(error);
@@ -34,9 +35,9 @@ const Hero = () => {
     <div className="lg:h-[600px] h-full w-full overflow-y-hidden font-mono shadow-md mb-20">
       <div className="flex lg:flex-row flex-col mt-10 lg:justify-between justify-start mx-8">
         <div>
-          {data.profiles && data.profiles.twitter && (
+          {data.profiles && data.profiles.name && (
             <h1 className="text-6xl font-medium text-[#d8874a]">
-              Hey There, <br /> I'm {data.profiles.twitter || "loading"}
+              Hey There, <br /> I'm {data.profiles.name || "loading"}
             </h1>
           )}
         </div>
