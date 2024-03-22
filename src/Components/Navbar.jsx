@@ -15,9 +15,10 @@ const Navbar = () => {
             <a href='#work'>Works</a>
           </li>
           <li><a href='#contact'>Contact</a></li>
+          <li><Link to='/'>Login</Link></li>
         </ul>
       </div>
-      <Link to='/' className="btn btn-ghost text-xl text-slate-700">Aman</Link>
+      <Link to='/' className="btn btn-ghost text-xl text-slate-700">MINIMAL</Link>
     </div>
     <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal px-1">
