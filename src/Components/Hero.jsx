@@ -52,7 +52,7 @@ const Hero = () => {
       </div>
       {data.profiles && data.profiles.profilePic ? (
   <img
-    className="rounded-full border-[5px] border-[#e09860] object-cover mx-auto"
+    className="rounded-full border-[5px]  object-cover mx-auto"
     src={data.profiles.profilePic}
     alt="boy"
     width={300}
@@ -61,8 +61,8 @@ const Hero = () => {
   />
 ) : (
   <img
-    className="rounded-full border-[5px] border-[#e09860] mx-auto"
-    src={cap} // Replace with the path to your default profile picture
+    className="rounded-full h-24 w-24 border-[5px] border-[#e09860] mx-auto"
+    src={cap} 
     alt="Default Profile Pic"
     width={300}
     height={300}
