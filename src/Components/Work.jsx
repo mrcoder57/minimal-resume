@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import Workskeleton from "./Workskeleton";
+import { useParams } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const getRandomColor = () => {
   const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFA500", "#800080"]; // Add more colors if needed
@@ -15,20 +17,24 @@ const getRandomColor = () => {
 const Work = () => {
   const [data, setData] = useState([]);
   const [loading,setLoading]=useState(true)
-  // const getApi = async () => {
-  //   try {
-  //     const response = await axios.get(
-  //       "https://amanportfolio-4wag.onrender.com/experience"
-  //     );
-  //     setData(response.data);
-  //       setLoading(false)
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-  // useEffect(() => {
-  //   getApi();
-  // }, []);
+  const {id}=useParams()
+  const getApi = async () => {
+    try {
+      const profileid=Cookies.get('profileid')
+      console.log(profileid)
+      const response = await axios.get(
+        `https://minimal-resume-backend-1.onrender.com/experience/${profileid}`
+      );
+      setData(response.data);
+      console.log("experince",response.data)
+        setLoading(false)
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  useEffect(() => {
+    getApi();
+  }, []);
   {
     if (loading) return <Workskeleton/>;
   }
