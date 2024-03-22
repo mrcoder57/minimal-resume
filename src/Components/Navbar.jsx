@@ -27,10 +27,12 @@ const Navbar = () => {
           <a href='#work'>Works</a>
         </li>
         <li><a href='#contact'>Contact</a></li>
+        <li><Link to='/'>Login</Link></li>
       </ul>
     </div>
     <div className="navbar-end">
-      <a href='https://github.com/mrcoder57' target="_blank"><img src={github} className=' h-8 w-8'/></a>
+      {/* <a href='https://github.com/mrcoder57' target="_blank"><img src={github} className=' h-8 w-8'/></a> */}
+      <Link to='/create'>Signup</Link>
     </div>
   </div>
   )
