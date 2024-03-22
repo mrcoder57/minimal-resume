@@ -36,7 +36,11 @@ function Login() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-white">
+    <div className="flex flex-col gap-4 justify-center items-center h-screen bg-white font-mono">
+      <div>
+        <p
+        className=" text-center text-3xl font-bold">A single place to showcase <br /> ur <span className=" text-orange-400"> talent</span> globally and locally</p>
+      </div>
       <form
         onSubmit={handleSubmit}
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
@@ -80,7 +84,7 @@ function Login() {
         <div className="mb-6"></div>
         <div className="flex items-center justify-between">
           <button
-            className="bg-[#e09860] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-[#e09860] hover:bg-[#ad805d] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
             Login
