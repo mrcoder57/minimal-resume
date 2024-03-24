@@ -46,7 +46,9 @@ const Projects = () => {
       items: 1,
     },
   };
-
+  {
+    if (loading) return <Projectskeleton/>;
+  }
   return (
     <div className="mx-8 mt-28 text-slate-700 font-mono">
       <div className="flex lg:flex-row flex-col justify-between">

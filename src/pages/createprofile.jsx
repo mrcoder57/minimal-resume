@@ -48,8 +48,11 @@ function UserProfileForm() {
           },
         }
       );
-  
+     
       console.log("Profile updated successfully:", response.data);
+      const id = response.data.userId;
+      console.log(id)
+      window.location.href=`profile/${id}`
     } catch (error) {
       console.error("Error:", error.message);
   
